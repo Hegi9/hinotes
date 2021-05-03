@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiNotes - Client Area</title>
+    <link rel="stylesheet" href="/static/client.css">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='client.css') }}">
+    <style>
+      @font-face {
+      font-family: myCustomFont;
+      src: url('/static/custom.ttf') ;
+  }
+
+      * {
+        font-family:myCustomFont;}
+        .client-form{
+  display: flex;
+  justify-content:center;
+  position:relative;
+  top:150px
+}
+
+.client-form input[type=text]{
+  border:2px solid #1abc9c;
+  margin:10px;
+  width:150px;
+  height: 30px;
+  border-radius: 10px;
+  outline: none;
+
+}
+
+.client-form input[type=submit]{
+  border:none;
+  color: white;
+  background:#1abc9c;
+  margin:10px;
+  width:50px;
+  padding:5px;
+  border-radius: 10px;
+  outline:none;
+}
+
+@media only screen and (max-width: 600px) {
+  .client-form-1{
+    position:relative;
+    bottom:80px
+  }
+
+}
+  </style>
+</head>
+<body>
+    <nav>
+        <a href="/home"><p id="nav-name">HiNotes</p></a>
+        <div class="user">
+          <p>{{user_name}}</p>
+        </nan>
+    </nav>
+    <main>
+      <div class="client-form-1">
+        <form method="POST" class="client-form">
+          <input type="text" name="HiNotesInput3" placeholder="Put a notes">
+          <input type="submit" name="HiNotesInput4" value="Update">
+        </form>
+      </div>
+        <div class="client-area">
+            <table class="content-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Note</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                {% for k in x['users'][user_name]['data'] %}
+                  <tbody>
+                    <tr>
+                      <td>{{x['users'][user_name]['data'][k]['note']}}</td>
+                      <td>{{x['users'][user_name]['data'][k]['note']}}</td>
+                      <td>{{x['users'][user_name]['data'][k]['date']}}</td>
+                    </tr>
+                  </tbody>
+                {% endfor %}
+              </table>
+        </div>
+    </main>
+</body>
+</html>

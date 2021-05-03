@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiNotes - Home</title>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='homepage.css') }}">
+    <style>
+        @font-face {
+        font-family: myCustomFont;
+        src: url('/static/custom.ttf') ;
+    }
+
+        * {
+          font-family:myCustomFont;}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/home"><p id="nav-name">HiNotes</p></a>
+        <div class="user">
+            <a href="/login"><p>Login</p></a>
+            <a href="/sign-up"><p>Sign up</p></a>
+        </nan>
+    </nav>
+    <main>
+        <div class="welcome">
+            <div class="welcome-interface">
+                <div class="welcome-container">
+                    <p style="font-size: 44px; color: #1abc9c;">
+                    Hi, we're HiNotes.</p>
+                    <p>An another way to take notes</p>
+                    <br>
+                    <p style="font-size:22px;">You just register and that it</p>
+                    <p style="font-size:22px;">Nothing really needed even a Email</p>
+                    <br>
+                    <br>
+                    <p>So what are you wating for?</p>
+                    <input type="button" value="Write a note">
+                    <input style="margin-left: 10px;" type="button" value="Register">
+                </div>
+            <div class="welcome-img">
+                <img src="{{url_for('static', filename='welcome-img.png')}}">
+            </div>
+        </div>
+        <div class="credit">
+            <p>© 2021 Hegi</p>
+        </div>
+    </main>
+</body>
+</html>

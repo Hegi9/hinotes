@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiNotes - Sign UP</title>
+    <link rel="stylesheet" href= "{{ url_for('static',filename='login.css') }}">
+    <style>
+        @font-face {
+        font-family: myCustomFont;
+        src: url('/static/custom.ttf') ;
+    }
+
+        * {
+          font-family:myCustomFont;}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/home"><p id="nav-name">HiNotes</p></a>
+        <div class="user">
+            <a href="/login"><p>Login</p></a>
+            <a href="/sign-up"><p>Sign up</p></a>
+        </nan>
+    </nav>
+    <main>
+        <div class="login">
+            <p>Welcome to HiNotes</p>
+            <form class="login-form" method="POST" action="/sign-up">
+                <input type="text" name="HiNotesInput">
+                <input type="password" name="HiNotesInput1">
+                <input type="submit" value="Login" herf="/sign-up">
+            </form>
+        </div>
+    </main>
+</body>
+</html>
